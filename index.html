@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Variantes Trío | Serenatas y música en vivo en Cali</title>
+<meta name="description" content="Variantes Trío: serenatas, cumpleaños y reuniones sociales en Cali y sus alrededores. Contáctenos por WhatsApp.">
+<meta property="og:title" content="Variantes Trío | Serenatas en Cali">
+<meta property="og:description" content="Serenatas, cumpleaños y reuniones sociales en Cali y sus alrededores.">
+<meta property="og:image" content="media/logo-trio.png">
+
+<!-- Favicon -->
+<link rel="icon" href="media/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16.png">
+<link rel="apple-touch-icon" href="media/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noche:#0b1230;
+  --noche-2:#121c44;
+  --oro:#d4af6a;
+  --oro-claro:#ecd9a8;
+  --marfil:#f4ecdb;
+  --texto:#d9d7e2;
+  --wa:#25a559;
+  --morado:#8b6fd0;
+  --lila:#c3b2f2;
+  --yt:#e62117;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--noche);color:var(--texto);font-family:var(--sans);font-size:1.05rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--oro);outline-offset:3px}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+
+/* barra superior */
+header{padding:1.1rem 0;border-bottom:1px solid rgba(212,175,106,.25)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.marca{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--oro-claro);text-decoration:none;letter-spacing:.02em}
+nav{display:flex;gap:1.6rem;font-size:.95rem}
+nav a{text-decoration:none;color:var(--texto)}
+nav a:hover{color:var(--lila)}
+
+/* portada */
+.portada{padding:clamp(2.5rem,7vw,5rem) 0 0;background:
+  radial-gradient(circle at 15% 0%,rgba(139,111,208,.28),transparent 45%),radial-gradient(circle at 90% 20%,rgba(212,175,106,.10),transparent 40%),var(--noche)}
+.portada h1{font-family:var(--serif);font-weight:700;font-size:clamp(3.2rem,10vw,7.2rem);line-height:.95;color:var(--marfil);letter-spacing:-.01em}
+.portada .bajada{max-width:34rem;margin-top:1.4rem;font-size:1.2rem;color:var(--texto)}
+.acciones{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:.85rem 1.5rem;border-radius:999px;font-weight:700;text-decoration:none;font-size:1rem;border:2px solid var(--oro);transition:background .2s,color .2s}
+.btn-oro{background:var(--oro);color:var(--noche)}
+.btn-oro:hover{background:var(--oro-claro)}
+.btn-linea{color:var(--lila);border-color:var(--morado)}
+.btn-linea:hover{background:rgba(139,111,208,.2)}
+
+.foto{margin-top:clamp(2rem,5vw,3.5rem);position:relative}
+.foto img{display:block;width:100%;height:auto;border-top:1px solid rgba(212,175,106,.4)}
+.foto::after{content:"";position:absolute;inset:auto 0 0 0;height:30%;background:linear-gradient(transparent,var(--noche))}
+
+/* secciones */
+section{padding:clamp(3.5rem,8vw,6rem) 0}
+h2{font-family:var(--serif);font-weight:700;color:var(--marfil);font-size:clamp(2.1rem,5vw,3.3rem);line-height:1.05;margin-bottom:1.2rem}
+.dos{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(1.5rem,6vw,5rem);align-items:start}
+.dos p+p{margin-top:1rem}
+
+.ocasiones{background:#141a47}
+.lista{list-style:none}
+.lista li{padding:1.3rem 0;border-bottom:1px solid rgba(212,175,106,.28)}
+.lista li:first-child{border-top:1px solid rgba(212,175,106,.28)}
+.lista strong{display:block;font-family:var(--serif);font-size:1.7rem;color:var(--oro-claro);line-height:1.2}
+
+/* sobre el trío (ilustración) */
+.trio{background:
+  radial-gradient(circle at 20% 50%,rgba(139,111,208,.22),transparent 55%),var(--noche)}
+.trio .dos{grid-template-columns:minmax(0,.9fr) 1.1fr;align-items:center}
+.emblema{position:relative;width:min(100%,380px);margin-inline:auto;aspect-ratio:1}
+.emblema::before{content:"";position:absolute;inset:-14px;border-radius:50%;border:1px solid rgba(212,175,106,.45)}
+.emblema::after{content:"";position:absolute;inset:-34px;border-radius:50%;border:1px dashed rgba(195,178,242,.28)}
+.emblema img{position:relative;z-index:1;display:block;width:100%;height:100%;border-radius:50%;box-shadow:0 18px 50px rgba(0,0,0,.5),0 0 60px rgba(212,175,106,.18)}
+.rasgos{list-style:none;display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem}
+.rasgos li{padding:.45rem 1rem;border:1px solid rgba(212,175,106,.4);border-radius:999px;font-size:.95rem;color:var(--oro-claro)}
+
+.pasos{list-style:none;counter-reset:p;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
+.pasos li{counter-increment:p;border-left:2px solid var(--morado);padding-left:1.1rem}
+.pasos li::before{content:counter(p);display:block;font-family:var(--serif);font-size:2.4rem;line-height:1;color:var(--lila)}
+.pasos b{color:var(--marfil);display:block;margin:.3rem 0 .2rem}
+
+/* galería */
+.galeria{background:#141a47}
+.galeria .intro{max-width:36rem;margin-bottom:2rem}
+.mosaico{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:clamp(240px,34vw,400px);gap:.8rem}
+.mosaico figure{position:relative;overflow:hidden;background:#0e1438;border:1px solid rgba(212,175,106,.3)}
+.mosaico img{width:100%;height:100%;object-fit:cover;display:block}
+.mosaico figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.8rem .9rem .55rem;font-size:.92rem;color:var(--marfil);background:linear-gradient(transparent,rgba(8,12,34,.88));pointer-events:none}
+.mosaico+.videos{margin-top:.8rem}
+.videos{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;align-items:start}
+.videos figure{position:relative;overflow:hidden;background:#0e1438;border:1px solid rgba(212,175,106,.3)}
+.videos figcaption{padding:.55rem .9rem;font-size:.92rem;color:var(--oro-claro)}
+.videos video{display:block;width:100%;height:clamp(240px,30vw,420px);object-fit:contain;background:#000}
+.mas{margin-top:1.4rem}
+.mas a{color:var(--lila);font-weight:500;border-bottom:1px solid var(--morado);text-decoration:none}
+.mas a:hover{color:var(--marfil)}
+
+/* contacto */
+.contacto .sub{max-width:34rem;margin-bottom:2rem}
+.numero{display:grid;grid-template-columns:1fr auto;align-items:center;gap:1rem 2rem;padding:1.3rem 0;border-bottom:1px solid rgba(212,175,106,.28)}
+.numero:first-of-type{border-top:1px solid rgba(212,175,106,.28)}
+.numero .tel{font-family:var(--serif);font-size:clamp(1.8rem,5vw,2.3rem);font-weight:600;color:var(--marfil);text-decoration:none;letter-spacing:.03em;line-height:1.1}
+.numero .tel:hover{color:var(--oro-claro)}
+.numero .btns{display:flex;gap:.6rem;flex-wrap:wrap}
+.btn-wa{background:var(--wa);border-color:var(--wa);color:#fff;padding:.7rem 1.2rem}
+.btn-wa:hover{background:#1e8b4a;border-color:#1e8b4a}
+.btn-llamar{color:var(--lila);border-color:var(--morado);padding:.7rem 1.2rem}
+.btn-llamar:hover{background:rgba(139,111,208,.2)}
+
+/* redes */
+.redes-sec{background:#141a47}
+.redes-sec .sub{max-width:34rem;margin-bottom:2rem}
+.redes{display:grid;grid-template-columns:1.25fr 1fr;gap:1rem}
+.red{position:relative;display:flex;align-items:center;gap:1.1rem;min-height:104px;padding:1.2rem 1.4rem;border-radius:18px;text-decoration:none;color:var(--marfil);transition:transform .2s,border-color .2s,background .2s}
+.red svg{flex:none;width:52px;height:52px}
+.red .t{display:block;font-family:var(--serif);font-size:1.7rem;font-weight:700;line-height:1.1}
+.red .d{display:block;font-size:.95rem;line-height:1.35;margin-top:.2rem;color:var(--texto);overflow-wrap:anywhere}
+.red .ir{margin-left:auto;flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center}
+.red .ir svg{width:20px;height:20px}
+.red:hover{transform:translateY(-3px)}
+.red-yt{background:linear-gradient(135deg,rgba(230,33,23,.30),rgba(230,33,23,.10) 60%,transparent),#0e1438;border:1.5px solid rgba(230,33,23,.7)}
+.red-yt:hover{border-color:#ff5a4f;background:linear-gradient(135deg,rgba(230,33,23,.42),rgba(230,33,23,.14) 60%,transparent),#0e1438}
+.red-yt .ir{background:var(--yt);color:#fff}
+.red-yt .etq{display:inline-block;margin-bottom:.35rem;padding:.12rem .6rem;border-radius:999px;background:var(--yt);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.red-tt{background:#0e1438;border:1.5px solid rgba(195,178,242,.4)}
+.red-tt:hover{border-color:var(--lila);background:#121a45}
+.red-tt .ir{border:1.5px solid var(--lila);color:var(--lila)}
+.red-pend{margin-top:1rem;font-size:.95rem;color:#8e91a8}
+
+footer{padding:2rem 0 5.5rem;text-align:center;font-size:.9rem;color:#8e91a8;border-top:1px solid rgba(212,175,106,.2)}
+
+/* botón flotante */
+.flota{position:fixed;right:1rem;bottom:1rem;z-index:10;box-shadow:0 6px 20px rgba(0,0,0,.45)}
+
+@media (max-width:760px){
+  nav{display:none}
+  .dos,.pasos{grid-template-columns:1fr}
+  .trio .dos{grid-template-columns:1fr;gap:3rem}
+  .emblema{width:min(78%,300px)}
+  .rasgos{justify-content:flex-start}
+  .mosaico{grid-template-columns:1fr 1fr;grid-auto-rows:clamp(200px,52vw,320px)}
+  .mosaico figure:first-child{grid-column:span 2}
+  .videos{grid-template-columns:1fr}
+  .videos video{height:min(78vh,520px)}
+  .numero{grid-template-columns:1fr}
+  .numero .btns .btn{flex:1}
+  .redes{grid-template-columns:1fr}
+  .red{min-height:96px;padding:1.1rem}
+  .red svg{width:46px;height:46px}
+  .red .t{font-size:1.5rem}
+  .red .ir{width:40px;height:40px}
+  .acciones .btn{flex:1 1 100%}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.red:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="marca" href="#inicio">Variantes Trío</a>
+    <nav aria-label="Principal">
+      <a href="#ocasiones">Ocasiones</a>
+      <a href="#galeria">Videos</a>
+      <a href="#como">Cómo contratar</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#redes">Redes</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="portada">
+    <div class="wrap">
+      <h1>Variantes<br>Trío</h1>
+      <p class="bajada">Serenatas, cumpleaños y reuniones sociales en Cali y sus alrededores. Tres músicos, buena música y puntualidad para su celebración.</p>
+      <div class="acciones">
+        <a class="btn btn-oro" href="#contacto">Cotizar mi evento</a>
+        <a class="btn btn-linea" href="https://wa.me/573046341719?text=Hola%2C%20quisiera%20cotizar%20una%20serenata%20con%20Variantes%20Tr%C3%ADo" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      </div>
+    </div>
+    <div class="wrap foto">
+      <img src="trio.jpg" width="1175" height="405" alt="Los tres integrantes de Variantes Trío, de saco oscuro y corbata morada">
+    </div>
+  </div>
+
+  <section class="ocasiones" id="ocasiones">
+    <div class="wrap dos">
+      <div>
+        <h2>Para cada ocasión</h2>
+        <p>Llevamos la música hasta usted, en su casa, salón o donde se celebre. Cuéntenos de quién es la fecha y nosotros armamos el repertorio.</p>
+      </div>
+      <ul class="lista">
+        <li><strong>Serenatas</strong>Para sorprender a esa persona especial, en Cali y municipios cercanos.</li>
+        <li><strong>Cumpleaños</strong>Música en vivo para que el homenajeado sea el centro de la fiesta.</li>
+        <li><strong>Reuniones sociales</strong>Aniversarios, almuerzos familiares y encuentros entre amigos.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="trio" id="trio" aria-labelledby="t-trio">
+    <div class="wrap dos">
+      <div class="emblema">
+        <picture>
+          <source srcset="media/logo-trio.webp" type="image/webp">
+          <img src="media/logo-trio.png" width="640" height="640" loading="lazy" alt="Ilustración de tres músicos con sombrero vueltiao y pañuelo rojo tocando acordeón, guitarra y tambor, sobre los colores de la bandera de Colombia">
+        </picture>
+      </div>
+      <div>
+        <h2 id="t-trio">Un trío para sus momentos especiales</h2>
+        <p>Variantes Trío lleva música en vivo a las fechas que importan. Cada presentación se prepara con cariño, puntualidad y el repertorio que usted escoja.</p>
+        <ul class="rasgos">
+          <li>En Cali y alrededores</li>
+          <li>Repertorio a su gusto</li>
+          <li>Puntualidad</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="galeria" id="galeria">
+    <div class="wrap">
+      <h2>Véanos y escúchenos en vivo</h2>
+      <p class="intro">Fotos y videos de nuestras presentaciones. Así se vive una serenata con Variantes Trío.</p>
+
+      <div class="mosaico">
+        <figure>
+          <img src="media/trio-estudio.jpg" alt="Variantes Trío con sus guitarras en la sala de ensayo" loading="lazy">
+          <figcaption>En sala de ensayo</figcaption>
+        </figure>
+        <figure>
+          <img src="media/jesus-guitarra.jpg" alt="Integrante del trío tocando la guitarra y sonriendo" loading="lazy" style="object-position:50% 35%">
+        </figure>
+        <figure>
+          <img src="media/edgar-alberto.jpg" alt="Integrantes del trío con una guitarra" loading="lazy" style="object-position:50% 40%">
+        </figure>
+      </div>
+
+      <div class="videos">
+        <figure>
+          <video controls preload="none" playsinline poster="media/cumpleanos-1.jpg"><source src="media/cumpleanos-1.mp4" type="video/mp4"></video>
+          <figcaption>Cumpleaños</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="none" playsinline poster="media/reunion-casa.jpg"><source src="media/reunion-casa.mp4" type="video/mp4"></video>
+          <figcaption>Reunión en casa</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="none" playsinline poster="media/cumpleanos-2.jpg"><source src="media/cumpleanos-2.mp4" type="video/mp4"></video>
+          <figcaption>Cumpleaños</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="none" playsinline poster="media/tarima.jpg"><source src="media/tarima.mp4" type="video/mp4"></video>
+          <figcaption>En tarima</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="none" playsinline poster="media/evento-parque-1.jpg"><source src="media/evento-parque-1.mp4" type="video/mp4"></video>
+          <figcaption>Evento al aire libre</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="none" playsinline poster="media/evento-parque-2.jpg"><source src="media/evento-parque-2.mp4" type="video/mp4"></video>
+          <figcaption>Evento al aire libre</figcaption>
+        </figure>
+      </div>
+      <p class="mas">¿Quiere ver más? Visite nuestro <a href="https://www.youtube.com/@losvarianteswa1600" target="_blank" rel="noopener">canal de YouTube</a> o síganos en <a href="#redes">nuestras redes</a>.</p>
+    </div>
+  </section>
+
+  <section id="como">
+    <div class="wrap">
+      <h2>Contratar es sencillo</h2>
+      <ol class="pasos">
+        <li><b>Escríbanos</b>Por WhatsApp o llamada, con la fecha, la hora y el lugar.</li>
+        <li><b>Acordamos los detalles</b>Repertorio, duración y valor, sin sorpresas.</li>
+        <li><b>Llegamos puntuales</b>Y hacemos que ese momento se recuerde.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="contacto" id="contacto" style="background:#141a47">
+    <div class="wrap">
+      <h2>Hable directamente con nosotros</h2>
+      <p class="sub">Escríbanos o llámenos a cualquiera de estos números. Le atendemos y le confirmamos la fecha.</p>
+
+      <div class="numero">
+        <a class="tel" href="tel:+573157987088">315 798 7088</a>
+        <div class="btns">
+          <a class="btn btn-wa" href="https://wa.me/573157987088?text=Hola%2C%20quisiera%20cotizar%20una%20serenata%20con%20Variantes%20Tr%C3%ADo" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-llamar" href="tel:+573157987088">Llamar</a>
+        </div>
+      </div>
+      <div class="numero">
+        <a class="tel" href="tel:+573046341719">304 634 1719</a>
+        <div class="btns">
+          <a class="btn btn-wa" href="https://wa.me/573046341719?text=Hola%2C%20quisiera%20cotizar%20una%20serenata%20con%20Variantes%20Tr%C3%ADo" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-llamar" href="tel:+573046341719">Llamar</a>
+        </div>
+      </div>
+      <div class="numero">
+        <a class="tel" href="tel:+573206445610">320 644 5610</a>
+        <div class="btns">
+          <a class="btn btn-wa" href="https://wa.me/573206445610?text=Hola%2C%20quisiera%20cotizar%20una%20serenata%20con%20Variantes%20Tr%C3%ADo" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-llamar" href="tel:+573206445610">Llamar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="redes-sec" id="redes">
+    <div class="wrap">
+      <h2>Síganos en redes</h2>
+      <p class="sub">Más videos, presentaciones y novedades de Variantes Trío.</p>
+
+      <div class="redes">
+        <a class="red red-yt" href="https://www.youtube.com/@losvarianteswa1600" target="_blank" rel="noopener" aria-label="Ver el canal de YouTube de Variantes Trío (se abre en otra pestaña)">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="9" width="44" height="30" rx="9" fill="#e62117"/><path d="M19.5 17.5v13l11.5-6.5z" fill="#fff"/></svg>
+          <span>
+            <span class="etq">Canal oficial</span>
+            <span class="t">YouTube</span>
+            <span class="d">Vea todos nuestros videos y suscríbase</span>
+          </span>
+          <span class="ir" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        </a>
+
+        <a class="red red-tt" href="https://www.tiktok.com/@variantes_03trio" target="_blank" rel="noopener" aria-label="Ver TikTok @variantes_03trio (se abre en otra pestaña)">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="12" fill="#000" stroke="#c3b2f2" stroke-opacity=".5"/><path d="M26.5 12v16.2a4.6 4.6 0 1 1-4.6-4.6" fill="none" stroke="#25f4ee" stroke-width="3.2" stroke-linecap="round" transform="translate(-1.4 1)"/><path d="M26.5 12v16.2a4.6 4.6 0 1 1-4.6-4.6" fill="none" stroke="#fe2c55" stroke-width="3.2" stroke-linecap="round" transform="translate(1.4 -1)"/><path d="M26.5 12v16.2a4.6 4.6 0 1 1-4.6-4.6M26.5 12c.4 3.6 2.8 6 6.5 6.3" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>
+            <span class="t">TikTok</span>
+            <span class="d">@variantes_03trio</span>
+          </span>
+          <span class="ir" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        </a>
+      </div>
+
+      <!-- Facebook e Instagram: agregue aquí los enlaces reales cuando los tenga.
+      <a class="red" href="ENLACE_FACEBOOK" target="_blank" rel="noopener">Facebook</a>
+      <a class="red" href="ENLACE_INSTAGRAM" target="_blank" rel="noopener">Instagram</a>
+      -->
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Variantes Trío · Serenatas en Cali y sus alrededores</div>
+</footer>
+
+<a class="btn btn-wa flota" href="https://wa.me/573046341719?text=Hola%2C%20quisiera%20cotizar%20una%20serenata%20con%20Variantes%20Tr%C3%ADo" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">WhatsApp</a>
+
+</body>
+</html>
